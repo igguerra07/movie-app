@@ -9,7 +9,8 @@ abstract class MovieRepository {
 }
 
 class MovieRepositoryImpl implements MovieRepository {
-  final MovieRemoteDataSource _remoteDataSource;
+  final MovieRemoteDataSource _remoteDataSource; //ModeloREponse
+  //ModeloCacheDAta
 
   MovieRepositoryImpl(this._remoteDataSource);
 
