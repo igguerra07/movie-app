@@ -1,11 +1,24 @@
-class MovieEntity {
-  final String title;
-  final String overview;
-  final String poster;
+import 'package:equatable/equatable.dart';
 
-  MovieEntity({
+class MovieEntity extends Equatable {
+  final String posterPath;
+  final int id;
+  final String backdropPath;
+  final String title;
+  final num? voteAverage;
+  final String? releaseDate;
+  final String? overview;
+
+  const MovieEntity({
+    required this.posterPath,
+    required this.id,
+    required this.backdropPath,
     required this.title,
-    required this.overview,
-    required this.poster,
+    required this.voteAverage,
+    required this.releaseDate,
+    this.overview,
   });
+
+  @override
+  List<Object> get props => [id, title];
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_movie_app/app/app_widget.dart';
-import 'package:flutter_movie_app/app/di/get_it.dart';
+import 'package:flutter_movie_app/app/core/di/get_it.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_movie_app/app/constants/routes_constants.dart';
-import 'package:flutter_movie_app/app/routes/custom_route_builder.dart';
-import 'package:flutter_movie_app/app/routes/routes_generator.dart';
+import 'package:flutter_movie_app/app/core/constants/routes_constants.dart';
+import 'package:flutter_movie_app/app/core/routes/custom_route_builder.dart';
+import 'package:flutter_movie_app/app/core/routes/routes_generator.dart';
 
 class AppWidget extends StatefulWidget {
   const AppWidget({Key? key}) : super(key: key);

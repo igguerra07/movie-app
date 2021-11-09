@@ -1,16 +1,12 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
-import 'package:flutter_movie_app/app/data/movie_remote_data.dart';
-import 'package:flutter_movie_app/app/entities/app_error.dart';
-import 'package:flutter_movie_app/app/models/get_trending_response.dart';
-
-abstract class MovieRepository {
-  Future<Either<AppError, GetTrendingResponse>> getTrending();
-}
+import 'package:flutter_movie_app/app/data/entities/app_error.dart';
+import 'package:flutter_movie_app/app/data/models/get_trending_response.dart';
+import 'package:flutter_movie_app/app/data/datasources/movie_remote_data.dart';
+import 'package:flutter_movie_app/app/data/repository/movie_repository.dart';
 
 class MovieRepositoryImpl implements MovieRepository {
-  final MovieRemoteDataSource _remoteDataSource; //ModeloREponse
-  //ModeloCacheDAta
+  final MovieRemoteDataSource _remoteDataSource;
 
   MovieRepositoryImpl(this._remoteDataSource);
 

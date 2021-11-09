@@ -1,8 +1,8 @@
 import 'dart:convert';
 
-import 'package:flutter_movie_app/app/constants/api_constants.dart';
-import 'package:flutter_movie_app/app/models/get_trending_response.dart';
-import 'package:flutter_movie_app/app/network/api_client.dart';
+import 'package:flutter_movie_app/app/core/constants/api_constants.dart';
+import 'package:flutter_movie_app/app/data/models/get_trending_response.dart';
+import 'package:flutter_movie_app/app/core/network/api_client.dart';
 
 class ApiService {
   final ApiClient _apiClient;

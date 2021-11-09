@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:flutter_movie_app/app/models/movie_model.dart';
+import 'package:flutter_movie_app/app/data/models/movie_model.dart';
 
 class GetTrendingResponse extends Equatable {
   final List<MovieModel> movies;

@@ -1,6 +1,6 @@
-import 'package:flutter_movie_app/app/data/entities/movie.dart';
+import 'package:flutter_movie_app/app/data/entities/movie_entity.dart';
 
-class MovieResponse extends MovieEntity {
+class MovieModel extends MovieEntity {
   final int id;
   final bool? video;
   final int? voteCount;
@@ -17,7 +17,7 @@ class MovieResponse extends MovieEntity {
   final double? popularity;
   final String? mediaType;
 
-  MovieResponse({
+  const MovieModel({
     required this.id,
     this.video,
     this.voteCount,
@@ -43,8 +43,8 @@ class MovieResponse extends MovieEntity {
     overview: overview,
   );
 
-  factory MovieResponse.fromJson(Map<String, dynamic> json) {
-    return MovieResponse(
+  factory MovieModel.fromJson(Map<String, dynamic> json) {
+    return MovieModel(
       popularity: json['popularity']?.toDouble() ?? 0.0,
       voteCount: json['vote_count'],
       video: json['video'],
@@ -63,23 +63,21 @@ class MovieResponse extends MovieEntity {
     );
   }
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['video'] = this.video;
-    data['vote_count'] = this.voteCount;
-    data['vote_average'] = this.voteAverage;
-    data['title'] = this.title;
-    data['release_date'] = this.releaseDate;
-    data['original_language'] = this.originalLanguage;
-    data['original_title'] = this.originalTitle;
-    data['genre_ids'] = this.genreIds;
-    data['backdrop_path'] = this.backdropPath;
-    data['adult'] = this.adult;
-    data['overview'] = this.overview;
-    data['poster_path'] = this.posterPath;
-    data['popularity'] = this.popularity;
-    data['media_type'] = this.mediaType;
-    return data;
-  }
+  Map<String, dynamic> toJson() => {
+    'id': id,
+    'video': video,
+    'vote_count': voteCount,
+    'vote_average': voteAverage,
+    'title': title,
+    'release_date': releaseDate,
+    'original_language': originalLanguage,
+    'original_title': originalTitle,
+    'genre_ids': genreIds,
+    'backdrop_path': backdropPath,
+    'adult': adult,
+    'overview': overview,
+    'poster_path': posterPath,
+    'popularity': popularity,
+    'media_type': mediaType,
+  };
 }

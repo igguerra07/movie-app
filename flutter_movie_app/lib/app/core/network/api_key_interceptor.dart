@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:flutter_movie_app/app/constants/api_constants.dart';
+import 'package:flutter_movie_app/app/core/constants/api_constants.dart';
 
 class ApiKeyInterceptor extends Interceptor {
   @override

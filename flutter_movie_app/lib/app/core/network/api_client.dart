@@ -1,8 +1,8 @@
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
-import 'package:flutter_movie_app/app/constants/api_constants.dart';
-import 'package:flutter_movie_app/app/network/api_key_interceptor.dart';
+import 'package:flutter_movie_app/app/core/constants/api_constants.dart';
+import 'package:flutter_movie_app/app/core/network/api_key_interceptor.dart';
 
 abstract class ApiClient {
   Future get({ required String path, Map<String, dynamic> queryParams });

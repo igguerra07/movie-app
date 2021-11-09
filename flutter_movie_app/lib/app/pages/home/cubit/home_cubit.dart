@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_movie_app/app/data/movie_repository.dart';
-import 'package:flutter_movie_app/app/features/home/cubit/home_state.dart';
+import 'package:flutter_movie_app/app/pages/home/cubit/home_state.dart';
+import 'package:flutter_movie_app/app/data/repository/movie_repository.dart';
 
 class HomeCubit extends Cubit<HomeState> {
   final MovieRepository _movieRepository;
@@ -13,7 +13,7 @@ class HomeCubit extends Cubit<HomeState> {
     final eitherResponse = await _movieRepository.getTrending();
 
     eitherResponse.fold(
-          (failure) => emit(HomeFailureState()),
+          (failure) => emit(HomeFailureState(error: failure)),
           (success) => emit(HomeSuccessState(movies: success.movies)),
     );
   }
