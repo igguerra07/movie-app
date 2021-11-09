@@ -16,6 +16,7 @@ class _AppWidgetState extends State<AppWidget> {
     return MaterialApp(
       title: "Movie Application",
       initialRoute: RoutesConstants.initial,
+      debugShowCheckedModeBanner: false,
       onGenerateRoute: (RouteSettings settings) {
         final routes = RoutesGenerator.getRoutes(settings);
         final WidgetBuilder? builder = routes[settings.name];
