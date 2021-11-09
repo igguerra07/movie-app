@@ -25,6 +25,7 @@ class MovieItemWidget extends StatelessWidget {
           child: Container(
             padding: const EdgeInsets.all(8),
             child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
@@ -41,15 +42,51 @@ class MovieItemWidget extends StatelessWidget {
                 ),
                 Expanded(
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      Text(
-                        movie.title,
-                        style: const TextStyle( fontWeight: FontWeight.bold),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Flexible(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  movie.title,
+                                  maxLines: 2,
+                                  overflow: TextOverflow.fade,
+                                  style: const TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                Text(
+                                  movie.releaseDateParsed ?? "",
+                                  textAlign: TextAlign.start,
+                                  style: const TextStyle(
+                                    fontSize: 12,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          const SizedBox(width: 4),
+                          Chip(
+                            label: Text(movie.voteAverage.toString(),
+                              style: const TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
+                      const SizedBox(height: 8),
                       Text(
                         movie.overview ?? "",
-                        style: const TextStyle(fontSize: 12),
-                        maxLines: 5,
+                        style: const TextStyle(fontSize: 14),
+                        maxLines: 3,
                         overflow: TextOverflow.ellipsis,
                       ),
                     ],
