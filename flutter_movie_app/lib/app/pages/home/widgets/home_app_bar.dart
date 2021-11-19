@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class HomeTittleBar extends StatelessWidget {
-  const HomeTittleBar ({Key? key}) : super(key: key);
+class HomeAppBar extends StatelessWidget {
+  const HomeAppBar ({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class HomeTittleBar extends StatelessWidget {
         ),
         IconButton(
           onPressed: () => {},
-          icon: const Icon(Icons.search_outlined, size: 28,),
+          icon: const Icon(Icons.search_outlined, size: 18,),
         )
       ],
     );

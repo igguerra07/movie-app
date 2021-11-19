@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_movie_app/app/core/constants/api_constants.dart';
+import 'package:flutter_movie_app/app/core/widgets/movie_average_widget.dart';
 import 'package:flutter_movie_app/app/data/entities/movie_entity.dart';
 
 class MovieItemWidget extends StatelessWidget {
@@ -72,14 +73,7 @@ class MovieItemWidget extends StatelessWidget {
                             ),
                           ),
                           const SizedBox(width: 4),
-                          Chip(
-                            label: Text(movie.voteAverage.toString(),
-                              style: const TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
+                          MovieAverageWidget(average: movie.voteAverage)
                         ],
                       ),
                       const SizedBox(height: 8),

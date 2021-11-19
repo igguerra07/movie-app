@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_movie_app/app/core/constants/routes_constants.dart';
 import 'package:flutter_movie_app/app/core/di/get_it.dart';
 import 'package:flutter_movie_app/app/core/widgets/empty_state_widget.dart';
 import 'package:flutter_movie_app/app/core/widgets/loading_widget.dart';
+import 'package:flutter_movie_app/app/data/entities/details_params.dart';
 import 'package:flutter_movie_app/app/pages/home/cubit/home_cubit.dart';
 import 'package:flutter_movie_app/app/pages/home/cubit/home_state.dart';
-import 'package:flutter_movie_app/app/pages/home/widgets/home_title_bar.dart';
+import 'package:flutter_movie_app/app/pages/home/widgets/home_app_bar.dart';
 import 'package:flutter_movie_app/app/pages/home/widgets/movie_list.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -21,7 +23,7 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            const HomeTittleBar(),
+            const HomeAppBar(),
             Expanded(
               child: BlocBuilder<HomeCubit, HomeState>(
                 bloc: _homeCubit..getTrending(),
@@ -53,7 +55,9 @@ class HomeScreen extends StatelessWidget {
   }
 
   void _navToMovieDetails(BuildContext context, int movieId) {
-    debugPrint(movieId.toString());
-    //Navigator.of(context).pushNamed(RoutesConstants.details);
+    Navigator.of(context).pushNamed(
+      RoutesConstants.details,
+      arguments: DetailsParams(movieId: movieId),
+    );
   }
 }
