@@ -22,7 +22,10 @@ class HomeAppBar extends StatelessWidget {
         ),
         IconButton(
           onPressed: () => {},
-          icon: const Icon(Icons.search_outlined, size: 18,),
+          icon: const Icon(
+            Icons.search_outlined,
+            size: 24,
+          ),
         )
       ],
     );

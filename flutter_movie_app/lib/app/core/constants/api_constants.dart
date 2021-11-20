@@ -6,9 +6,7 @@ class ApiConstants {
   static const String baseUrl = "https://api.themoviedb.org/3";
   static const String baseImgUrl = "https://image.tmdb.org/t/p/w500";
 
-  static const String getPopular    = "/";
-  static const String geDetails     = "/movie";
-  static const String getTrending   = "/trending/movie/day";
-  static const String getComingSoon = "/details";
-  static const String getPlayingNow = "/details";
+  static const String getCast     = "/movie/:id/credits";
+  static const String geDetails   = "/movie";
+  static const String getTrending = "/trending/movie/day";
 }

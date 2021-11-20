@@ -19,13 +19,13 @@ class MovieAppBarWidget extends StatelessWidget {
           onPressed: onClickBackButton,
           icon: const Icon(Icons.arrow_back_ios),
           color: Colors.white,
-          iconSize: 18,
+          iconSize: 24,
         ),
         IconButton(
           onPressed: onClickFavButton,
           icon: const Icon(Icons.favorite_border),
           color: Colors.white,
-          iconSize: 18,
+          iconSize: 24,
         ),
       ],
     );

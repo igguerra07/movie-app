@@ -14,6 +14,11 @@ class EmptyStateWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text(message));
+    return Padding(
+      padding: const EdgeInsets.all(16),
+      child: Center(
+          child: Text(message)
+      ),
+    );
   }
 }
