@@ -20,11 +20,13 @@ dependencies:
   dio: ^4.0.1
 
   equatable: ^2.0.3
-  flutter_bloc: ^7.3.2
+  flutter_bloc: ^8.0.0
 
   cupertino_icons: ^1.0.2
 
   intl: ^0.17.0
+
+  youtube_player_flutter: ^8.0.0
 
 dev_dependencies:
   flutter_test:
